@@ -9,7 +9,7 @@
       <a v-link="{name: 'order'}">订单</a> |
       <a v-link="{name: 'UCenter'}">个人中心</a>
     </div>
-    <router-view></router-view>
+    <router-view v-wechat-title="$route.title"></router-view>
   </div>
 </template>
 

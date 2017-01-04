@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App'
 import Router from 'vue-router'
-import setWechatTitle from './utils/setWechatTitle.js'
-
+import VueWechatTitle from 'vue-wechat-title'
+Vue.use(VueWechatTitle)
 Vue.use(Router)
 
 var router = new Router()
@@ -27,10 +27,6 @@ router.map({
   }
 })
 
-router.afterEach((transition) => {
-  let title = transition.to.title + '-Custom-Suffix'
-  setWechatTitle(title)
-})
 router.redirect({
   '*': '/home'
 })
