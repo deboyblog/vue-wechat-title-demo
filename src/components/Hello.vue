@@ -6,13 +6,10 @@
 
 <script>
 export default {
+  name: 'hello',
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello World!'
+      msg: 'Welcome to Your Vue.js App'
     }
   }
 }
@@ -20,7 +17,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
   color: #42b983;
 }
 </style>

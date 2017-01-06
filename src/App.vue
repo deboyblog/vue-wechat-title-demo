@@ -1,51 +1,39 @@
 <template>
   <div id="app">
-    <img class="logo" src="/static/logo.png">
-    <p>
-      Welcome to your Vue.js app!
-    </p>
+    <img src="./assets/logo.png">
+    <hello></hello>
     <div class="nav">
-      <a v-link="{name: 'home'}">首页</a> |
-      <a v-link="{name: 'order'}">订单</a> |
-      <a v-link="{name: 'UCenter'}">个人中心</a>
+      <router-link to="/home">首页</router-link> |
+      <router-link to="/order">订单</router-link> |
+      <router-link to="/ucenter">个人中心</router-link>
     </div>
-    <router-view v-wechat-title="$route.title"></router-view>
+    <!--<div v-wechat-title="$route.meta.title"></div>-->
+    <!--or-->
+    <router-view v-wechat-title="$route.meta.title"></router-view>
   </div>
 </template>
 
 <script>
+import Hello from './components/Hello'
+
+export default {
+  name: 'app',
+  components: {
+    Hello
+  }
+}
 </script>
 
 <style>
-html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
 #app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
+  color: #2c3e50;
+  margin-top: 60px;
 }
 .nav{
-  padding: 10px;
+  margin: 20px;
 }
 </style>
